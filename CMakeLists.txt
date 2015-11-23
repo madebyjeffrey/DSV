@@ -15,3 +15,6 @@ add_executable(dsv_tests test_dsv.cpp)
 target_link_libraries(dsv_tests gtest gtest_main DSV)
 
 add_test(NAME DSV-Test COMMAND dsv_tests)
+
+set(DSV_HEADER_PATH ${PROJECT_SOURCE_DIR})
+set(DSV_LIBRARY_PATH ${PROJECT_BINARY_DIR})
