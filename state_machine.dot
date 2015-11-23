@@ -1,0 +1,30 @@
+digraph G {
+	"0" [peripheries = 2, color=blue]
+	"invalid" [shape="square", color=red]
+	
+	
+	"0" -> "1" [label="quote"];
+	"0" -> "0" [label="comma (field), lf (record)"];
+	"0" -> "3" [label="cr"];
+	"0" -> "4" [label="other char"];
+	
+	"1" -> "2" [label="quote"];
+	"1" -> "1" [label="anything else"];
+	
+	"2" -> "1" [label="quote"];
+	"2" -> "0" [label="comma (field), lf (record)"];
+	"2" -> "3" [label="cr"];
+	"2" -> "invalid" [label="other char"];
+	
+	"3" -> "0" [label="lf (record)"];
+	"3" -> "invalid" [label="anything else"];
+	
+	"4" -> "invalid" [label="quote"];
+	"4" -> "0" [label="comma (field), lf (record)"];
+	"4" -> "3" [label="cr"];
+	"4" -> "4" [label="other char"];
+	
+	"invalid" -> "invalid" [label="any input"];
+	
+	
+}
