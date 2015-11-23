@@ -193,9 +193,12 @@ namespace dsv {
         }
 
         if (acc.has_error() || state != 0) {
-            std::cout << acc.get_error() << std::endl;
-            std::cout << "Finishing state " << state << std::endl;
-            throw "error";
+            std::stringstream ss;
+
+            ss << acc.get_error();
+            //std::cout << acc.get_error() << std::endl;
+            //std::cout << "Finishing state " << state << std::endl;
+            throw ss.str();
         }
 
         return acc.fields_and_records;
