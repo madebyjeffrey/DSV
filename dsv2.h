@@ -91,6 +91,7 @@ namespace dsv {
                 }
             }
 
+            contents.erase(std::remove(begin(contents), end(contents), '\r'));
             return contents;
         }
 
